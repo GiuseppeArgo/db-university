@@ -45,3 +45,30 @@ WHERE `name` LIKE "Corso di Laurea Magistrale%";
 7. Da quanti dipartimenti è composta l'università? (12)
 SELECT COUNT(*) AS departments_num
 FROM `departments`;
+
+----------------------
+
+8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
+SELECT COUNT(*) AS 'teachers_without_phone'
+FROM `teachers` 
+WHERE `phone` IS NULL;
+
+----------------------
+
+9. Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo degree_id, inserire un valore casuale)
+INSERT INTO `students` (`degree_id`,`name`, `surname`, `date_of_birth`,`fiscal_code`, `enrolment_date`, `registration_number`, `email`)
+VALUES ("1","Giuseppe", "Argo", "1997-05-18", "rgagppsadmfje","2024-05-29","735298","giuseppe@argo.com");
+
+----------------------
+
+10. Cambiare il numero dell’ufficio del professor Pietro Rizzo in 126
+UPDATE `teachers`
+SET `office_number` = 126
+WHERE `name` = "Pietro"
+AND `surname` = "Rizzo";
+
+----------------------
+
+11. Eliminare dalla tabella studenti il record creato precedentemente al punto 9
+DELETE FROM `students`
+WHERE `id` = 5001;
