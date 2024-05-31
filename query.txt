@@ -109,6 +109,17 @@ GROUP BY `degrees`.`department_id`;
 
 -- JOIN
 
+1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
+SELECT `students`.`id`,
+`students`.`name`,
+`students`.`surname`      
+FROM `students`
+INNER JOIN `degrees`
+ON `students`.`degree_id` = `degrees`.`id`
+WHERE `degrees`.`name` = "Corso di Laurea in Economia";
+
+----------------------
+
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 SELECT `students`.`surname` AS `Cognome`,
 `students`.`name` AS `Nome`,
