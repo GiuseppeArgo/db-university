@@ -100,6 +100,15 @@ GROUP BY `exam_id`;
 
 ----------------------
 
+4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+SELECT `degrees`.`department_id`, COUNT(*)
+FROM `degrees`
+GROUP BY `degrees`.`department_id`;
+
+///////////////////////
+
+-- JOIN
+
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 SELECT `students`.`surname` AS `Cognome`,
 `students`.`name` AS `Nome`,
@@ -127,3 +136,5 @@ INNER JOIN `courses`
 ON `course_teacher`.`course_id` = `courses`.`id`
 INNER JOIN `degrees`
 ON `courses`.`degree_id` = `degrees`.`id`
+
+----------------------
